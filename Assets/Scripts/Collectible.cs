@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    public ParticleSystem particles;
     public float timeToRespawn;
     public float shrinkSpeed;
     public Vector3 rotateSpeeds;
@@ -35,6 +36,7 @@ public class Collectible : MonoBehaviour
             if (collected)
                 return;
             collected = true;
+            particles.Emit(50);
             collider.enabled = false;
         }
     }
